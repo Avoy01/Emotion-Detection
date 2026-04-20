@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+markers = [
+  "slow: marks tests that exercise the full training pipeline",
+]
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["W503"]
