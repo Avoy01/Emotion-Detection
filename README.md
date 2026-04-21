@@ -1,5 +1,10 @@
 # Emotion Detection with BiLSTM and Attention
 
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Accuracy](https://img.shields.io/badge/test%20accuracy-93.2%25-brightgreen)
+![F1](https://img.shields.io/badge/macro%20F1-90.63%25-blue)
+
 This project implements an end-to-end emotion classification system for English text using a frozen GloVe embedding layer, a Bidirectional LSTM encoder, and a custom Bahdanau-style attention mechanism.
 
 It supports:
