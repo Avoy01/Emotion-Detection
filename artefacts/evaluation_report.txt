@@ -1,0 +1,39 @@
+======================================================
+EMOTION DETECTION MODEL - EVALUATION REPORT
+======================================================
+Date           : 2026-04-20T16:52:04.800936Z
+Model          : best_model.keras
+Test samples   : 4000
+
+OVERALL METRICS
+---------------
+Test Accuracy  : 0.9320
+Macro F1       : 0.9063
+Weighted F1    : 0.9333
+
+PER-CLASS METRICS
+-----------------
+Class       Precision  Recall  F1-Score  Support  AUROC
+anger      0.9388     0.9336  0.9362    542     0.9977
+fear       0.9203     0.8505  0.8840    475     0.9964
+joy        0.9787     0.9157  0.9461    1352    0.9964
+love       0.7770     0.9878  0.8698    328     0.9961
+sadness    0.9729     0.9620  0.9675    1159    0.9978
+surprise   0.7268     0.9792  0.8343    144     0.9973
+
+OVERFITTING CHECK
+-----------------
+Final train accuracy : 0.9229
+Final val accuracy   : 0.9241
+Gap                  : -0.0012  [PASS]
+
+ARTEFACTS SAVED
+---------------
+E:\Sentiment Analysis\artefacts\best_model.keras
+E:\Sentiment Analysis\artefacts\tokenizer.pkl
+E:\Sentiment Analysis\artefacts\label_encoder.pkl
+E:\Sentiment Analysis\artefacts\accuracy_curve.png
+E:\Sentiment Analysis\artefacts\loss_curve.png
+E:\Sentiment Analysis\artefacts\confusion_matrix.png
+E:\Sentiment Analysis\artefacts\training_log.csv
+======================================================
