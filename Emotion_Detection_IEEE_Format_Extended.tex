@@ -8,6 +8,8 @@
 \usepackage{xcolor}
 \usepackage{booktabs}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -130,7 +132,29 @@ The proposed deep learning system is a multi-layered sequence classifier enginee
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.92\columnwidth]{artefacts/bilstm_attention_architecture_drawio_bw.png}
+\begin{tikzpicture}[
+  node distance=0.55cm,
+  box/.style={rectangle, rounded corners=4pt, draw=black!70,
+              fill=blue!10, minimum width=3.8cm, minimum height=0.65cm,
+              font=\small, text centered},
+  arr/.style={-{Stealth[length=4pt]}, thick}
+]
+\node[box, fill=gray!15] (input)  {Input Text};
+\node[box, below=of input]  (emb)    {GloVe Embedding (100-D)};
+\node[box, below=of emb]    (bilstm) {BiLSTM -- 128 units/dir};
+\node[box, below=of bilstm] (attn)   {Bahdanau Attention ($\alpha_t$)};
+\node[box, below=of attn]   (ctx)    {Context Vector (256-D)};
+\node[box, below=of ctx]    (dense)  {Dense Layer -- 64 units, ReLU};
+\node[box, below=of dense]  (drop)   {Dropout (0.5)};
+\node[box, below=of drop, fill=green!15]   (out)    {Softmax -- 6 Emotions};
+\draw[arr] (input)  -- (emb);
+\draw[arr] (emb)    -- (bilstm);
+\draw[arr] (bilstm) -- (attn);
+\draw[arr] (attn)   -- (ctx);
+\draw[arr] (ctx)    -- (dense);
+\draw[arr] (dense)  -- (drop);
+\draw[arr] (drop)   -- (out);
+\end{tikzpicture}
 \caption{Proposed BiLSTM-Attention architecture for emotion classification.}
 \label{fig:arch}
 \end{figure}

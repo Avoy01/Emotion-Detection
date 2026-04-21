@@ -36,6 +36,7 @@ glove/archive.zip
 *.bbl
 *.blg
 *.out
+*.log
 *.synctex.gz
 *.synctex\(busy\)
 compile_log.txt
